@@ -26,7 +26,7 @@ The objective is to find all the matching pairs as quickly and accurately as pos
 ## Setup and Usage
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Fisher-Shira/Memory_Card_Game.git
+   git clone https://github.com/Fisher-Shira/Memory-Card-Game.git
 2. Navigate to the project directory:
    ```bash
     cd Memory_Card_Game
