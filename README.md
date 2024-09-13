@@ -29,7 +29,7 @@ The objective is to find all the matching pairs as quickly and accurately as pos
    git clone https://github.com/Fisher-Shira/Memory-Card-Game.git
 2. Navigate to the project directory:
    ```bash
-    cd Memory_Card_Game
+    cd Memory-Card-Game
 3. Compile the project:
    ```bash
     gcc -o memory_game memory_game.c
