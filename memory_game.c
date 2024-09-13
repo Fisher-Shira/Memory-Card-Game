@@ -10,15 +10,16 @@
 #include <time.h>
 #include "memory_game.h"
 
-// Run the game until someone win
 int main(int argc, char *argv[])
 {
+    // Run the game until someone win
     Card board[MAX_BOARD_LENGTH][MAX_BOARD_LENGTH+1];
     Player arrPlayers[MAX_NUM_PLAYERS + 1];
     int numPlayerTurn = 0, numOfMatches = 0, numOfPlayers;
     initializeAndExplainGame(board, arrPlayers, &numOfPlayers);
     printGameBoard(board);
-    while(numOfMatches != NUM_OF_OBJECTS) {
+    while(numOfMatches != NUM_OF_OBJECTS)
+    {
         // Match
         if(playerTurn(&arrPlayers[numPlayerTurn%numOfPlayers], board))
         {
@@ -32,20 +33,20 @@ int main(int argc, char *argv[])
     CheckGameScores(numOfPlayers, arrPlayers);
 }
 
-// Create new Player
-Player createPlayer(const char *playerName) {
+Player createPlayer(const char *playerName)
+{
+    // Create new Player
     Player newPlayer;
     newPlayer.name = malloc(strlen(playerName) + 1);
-    if (newPlayer.name != NULL) {
+    if (newPlayer.name != NULL)
         strcpy(newPlayer.name, playerName);
-    }
     newPlayer.points = INITIAL_POINTS;
     return newPlayer;
 }
 
-// Initialize the game args + Print game explanation
 void initializeAndExplainGame(Card (*board)[MAX_BOARD_LENGTH+1], Player arrPlayers[], int *numOfPlayers)
 {
+    // Initialize the game args + Print game explanation
     int playersCounter = 0, currentPos, rowPos, colPos;
     char *currentName;
     char playerNames[100];
@@ -102,9 +103,9 @@ void initializeAndExplainGame(Card (*board)[MAX_BOARD_LENGTH+1], Player arrPlaye
     printf("Let the game begin!\n\n");
 }
 
-// Print the players scores
 void printPlayersScores(Player arrPlayers[], int numOfPlayers)
 {
+    // Print the players scores
     printf("The scores are:\n");
     for(int i = 0; i < numOfPlayers; i++)
     {
@@ -115,9 +116,9 @@ void printPlayersScores(Player arrPlayers[], int numOfPlayers)
     printf("\n\n");
 }
 
-// Print board grids 
 void printGameBoard(Card (*board)[MAX_BOARD_LENGTH+1])
 {
+    // Print board grids
     int numChars = NUM_ROW_DIVISION, currentLen;
     char rowDivStr[numChars];
     // Calculate number of row division chars
@@ -141,9 +142,9 @@ void printGameBoard(Card (*board)[MAX_BOARD_LENGTH+1])
     printf("|\n%s\n\n", rowDivStr);
 }
 
-// Get 2 position and return answer (match/unmatch)
 Bool playerTurn(Player *currentPlayer, Card (*board)[MAX_BOARD_LENGTH+1])
 {
+    // Get 2 position and return answer (match/unmatch)
     int firstRow, firstCol, secondRow, secondCol;
     Bool isMatch = False;
     printf("It is %s's turn.\n", currentPlayer->name);
@@ -178,18 +179,18 @@ Bool playerTurn(Player *currentPlayer, Card (*board)[MAX_BOARD_LENGTH+1])
     return isMatch;
 }
 
-// Check if the card is valid - unmatched and the in valid positions
 Bool isValidMove(int row, int col, Card (*board)[MAX_BOARD_LENGTH+1])
 {
+    // Check if the card is valid - unmatched and the in valid positions
     Bool validUnmatchedCard, validPos;
     validUnmatchedCard = board[row][col].isMatched ? False : True;
     validPos = row >= BOARD_DIM || col >= BOARD_DIM || row < 0 || col < 0 ? False : True;
     return validUnmatchedCard && validPos;
 }
 
-// Check if the 2 selected cards match
 Bool isCardsMatch(int firstRow, int firstCol, int secondRow, int secondCol, Card (*board)[MAX_BOARD_LENGTH+1])
 {
+    // Check if the 2 selected cards match
     if (!strcmp(board[firstRow][firstCol].type, board[secondRow][secondCol].type))
     {
         board[firstRow][firstCol].isMatched = True;
@@ -199,9 +200,9 @@ Bool isCardsMatch(int firstRow, int firstCol, int secondRow, int secondCol, Card
     return False;
 }
 
-// Calculate the player with the greatest score
 void CheckGameScores(int numOfPlayers, Player arrPlayers[])
 {
+    // Calculate the player with the greatest score
     int maxPoints = 0, nextMaxPoints = 0;
     char * playerMaxPointName;
     for(int i = 0; i < numOfPlayers; i++)
