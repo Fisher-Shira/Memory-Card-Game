@@ -1,8 +1,8 @@
-# Memory Game
+# Memory Card Game
 
 ## Overview
-This is a simple **Memory Game** implemented in C.
-The game challenges the player to remember and match pairs of cards.
+This is a simple Memory Card Game implemented in C.<br>
+The game challenges the player to remember and match pairs of cards.<br>
 The objective is to find all the matching pairs as quickly and accurately as possible.
 
 ## Features
@@ -34,9 +34,10 @@ The objective is to find all the matching pairs as quickly and accurately as pos
    ```bash
     gcc -o memory_game memory_game.c
 4. Run the executable:
+   ```bash
     ./memory_game
 
 ## Project Structure
-memory_game.c – The main file containing the game logic.
-memory_game.h - File contains declarations and definitions used throughout the project.
+memory_game.c – The main file containing the game logic.<br>
+memory_game.h - File contains declarations and definitions used throughout the project.<br>
 README.md – This file.
