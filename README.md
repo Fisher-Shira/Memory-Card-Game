@@ -40,4 +40,3 @@ The objective is to find all the matching pairs as quickly and accurately as pos
 ## Project Structure
 memory_game.c – The main file containing the game logic.<br>
 memory_game.h - File contains declarations and definitions used throughout the project.<br>
-README.md – This file.
