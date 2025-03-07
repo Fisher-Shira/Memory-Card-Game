@@ -42,5 +42,7 @@ The objective is to find all the matching pairs as quickly and accurately as pos
    make clean
 
 ## Project Structure
-memory_game.c – The main file containing the game logic.<br>
-memory_game.h - File contains declarations and definitions used throughout the project.<br>
+- **`src/`**: Contains the C source code and header files for the project.
+- **`src/memory_game.c`** – The main file containing the project logic.
+- **`src/memory_game.h`** - Contains declarations and definitions used throughout the project.
+- **`Makefile`**: A file used to automate the build and setup process of the project (e.g., compilation and running the program).
