@@ -30,14 +30,17 @@ The objective is to find all the matching pairs as quickly and accurately as pos
 2. Navigate to the project directory:
    ```bash
     cd Memory-Card-Game
-3. Compile the project:
+3. Compile and run using make:
    ```bash
-    gcc -o memory_game memory_game.c
-4. Run the executable:
+   make run
+- If make is not installed, you can compile manually:
    ```bash
-    ./memory_game
+   gcc -o memory_game memory_game.c
+   ./memory_game
+4. To clean the executable:
+   ```bash
+   make clean
 
 ## Project Structure
 memory_game.c – The main file containing the game logic.<br>
 memory_game.h - File contains declarations and definitions used throughout the project.<br>
-README.md – This file.
